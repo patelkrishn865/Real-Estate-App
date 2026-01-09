@@ -9,9 +9,10 @@ function BookingBox({ listing }) {
 
     const isLoggedIn = !!user
     const isOwner = user?.primaryEmailAddress?.emailAddress === listing?.createdBy
+    const isRent = listing.type
     const bookingAmount =  5000
 
-    if(isOwner) return null;
+    if(isOwner || listing?.type === "Rent") return null;
 
     
 const handleBooking = async () => {

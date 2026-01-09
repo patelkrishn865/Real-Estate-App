@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { useUser } from '@clerk/nextjs'
 import React from 'react'
+import { toast } from 'sonner';
 
 function BookingBox({ listing }) {
 
@@ -25,7 +26,7 @@ const handleBooking = async () => {
       const { available } = await check.json();
     
       if (!available) {
-        alert("This property is already booked.");
+        toast("This property is already booked.");
         return;
       }
     

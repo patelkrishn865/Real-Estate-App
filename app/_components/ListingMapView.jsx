@@ -1,8 +1,16 @@
 "use client";
+
+
+import dynamic from "next/dynamic";
+
+const MapSection = dynamic(
+  () => import("@/app/_components/MapSection"),
+  { ssr: false }
+);
+
 import React, { useEffect, useState } from "react";
 import Listing from "./Listing";
 import { supabase } from "@/utils/supabase/client";
-import MapSection from "./MapSection";
 
 function ListingMapView({ type }) {
   const [listing, setListing] = useState([]);

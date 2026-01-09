@@ -11,7 +11,7 @@ function BookingBox({ listing }) {
     const isOwner = user?.primaryEmailAddress?.emailAddress === listing?.createdBy
     const bookingAmount =  5000
 
-    // if(isOwner) return null;
+    if(isOwner) return null;
 
     
 const handleBooking = async () => {
